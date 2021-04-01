@@ -2,15 +2,15 @@ package grails.saml.test
 
 class SamlController {
 
+    def springSecurityService
+
     def index(){
         render " index"
     }
 
-    def SSO() {
-        render "SSO"
-    }
-
     def success(){
+        println "springSecurityService.principal.id = $springSecurityService.principal"
+        println "here at success"
         render "success"
     }
 

@@ -79,7 +79,6 @@ dependencies {
     
     //added dependencies
     compile 'org.grails.plugins:spring-security-core:4.0.2'
-    compile "org.springframework.boot:spring-boot-starter-security"
     compile "org.grails.plugins:spring-security-saml:4.0.2"
 }
 

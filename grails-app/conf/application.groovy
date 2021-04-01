@@ -8,9 +8,11 @@ grails.plugin.springsecurity.useBasicAuth = true
 grails.plugin.springsecurity.basic.realmName = 'Saml-test'
 grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
 grails.plugin.springsecurity.interceptUrlMap = [
-        [pattern: '/**',               access: ['permitAll']],
         [pattern: '/',               access: ['permitAll']],
-        [pattern: '/saml/**',               access: ['permitAll']],
+
+        [pattern: '/test/testAdmin',               access: ['ROLE_ADMIN']],
+        [pattern: '/test/testUser',               access: ['ROLE_SAML']],
+        [pattern: '/login/**',               access: ['permitAll']],
         [pattern: '/metadata/**',               access: ['permitAll']],
         [pattern: '/saml/**',               access: ['permitAll']],
         [pattern: '/error',          access: ['permitAll']],
@@ -49,6 +51,7 @@ grails.plugin.springsecurity.saml.active = true
 grails.plugin.springsecurity.saml.afterLoginUrl = '/saml/success'
 grails.plugin.springsecurity.saml.afterLogoutUrl = '/saml/logout'
 grails.plugin.springsecurity.saml.responseSkew = 300
+grails.plugin.springsecurity.saml.useLocalRoles = true
 grails.plugin.springsecurity.saml.signatureAlgorithm = 'rsa-sha256'
 grails.plugin.springsecurity.saml.digestAlgorithm = 'sha256'
 grails.plugin.springsecurity.saml.userGroupAttribute = 'roles'
