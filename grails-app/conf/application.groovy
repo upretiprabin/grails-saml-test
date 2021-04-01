@@ -11,7 +11,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
         [pattern: '/',               access: ['permitAll']],
 
         [pattern: '/test/testAdmin',               access: ['ROLE_ADMIN']],
-        [pattern: '/test/testUser',               access: ['ROLE_SAML']],
+        [pattern: '/test/**',               access: ['ROLE_USER','ROLE_SAML']],
         [pattern: '/login/**',               access: ['permitAll']],
         [pattern: '/metadata/**',               access: ['permitAll']],
         [pattern: '/saml/**',               access: ['permitAll']],
@@ -33,16 +33,6 @@ grails.plugin.springsecurity.filterChain.chainMap = [
         [pattern: '/**/images/**',   filters: 'none'],
         [pattern: '/**/favicon.ico', filters: 'none'],
         [pattern: '/**',             filters: 'JOINED_FILTERS']
-]
-
-grails.plugin.springsecurity.filterChain.filterNames = [
-        'securityContextPersistenceFilter',
-        'authenticationProcessingFilter',
-        'basicAuthenticationFilter',
-        'basicExceptionTranslationFilter',
-        'securityContextHolderAwareRequestFilter',
-        'anonymousAuthenticationFilter',
-        'filterInvocationInterceptor'
 ]
 
 grails.plugin.springsecurity.providerNames = ['samlAuthenticationProvider','daoAuthenticationProvider', 'anonymousAuthenticationProvider']
