@@ -1,6 +1,8 @@
 import grails.plugin.springsecurity.SpringSecurityUtils
 import grails.saml.test.CustomSpringSamlUserDetailsService
 import grails.saml.test.UserPasswordEncoderListener
+import org.springframework.security.web.context.NullSecurityContextRepository
+import org.springframework.security.web.context.SecurityContextPersistenceFilter
 
 // Place your Spring DSL code here
 beans = {
@@ -20,5 +22,9 @@ beans = {
         samlUseLocalRoles = SpringSecurityUtils.securityConfig.saml.useLocalRoles
         grailsApplication = ref('grailsApplication')
     }
+
+    statelessSecurityContextRepository(NullSecurityContextRepository)
+    securityContextPersistenceFilter(SecurityContextPersistenceFilter, ref('statelessSecurityContextRepository'))
+
 
 }

@@ -39,7 +39,7 @@ grails.plugin.springsecurity.providerNames = ['samlAuthenticationProvider','daoA
 
 grails.plugin.springsecurity.saml.active = true
 grails.plugin.springsecurity.saml.afterLoginUrl = '/saml/success'
-grails.plugin.springsecurity.saml.afterLogoutUrl = '/saml/logout'
+grails.plugin.springsecurity.saml.afterLogoutUrl = '/'
 grails.plugin.springsecurity.saml.responseSkew = 300
 grails.plugin.springsecurity.saml.useLocalRoles = true
 grails.plugin.springsecurity.saml.signatureAlgorithm = 'rsa-sha256'
@@ -52,8 +52,7 @@ grails.plugin.springsecurity.saml.autoCreate.assignAuthorities=false  //If you w
 
 
 grails.plugin.springsecurity.saml.metadata.defaultIdp = 'https://sts.windows.net/0c0a3fb0-88e0-46d7-b24b-67b12f8954d5/'
-grails.plugin.springsecurity.saml.metadata.url = "security/pom-saml-test.xml"
-grails.plugin.springsecurity.saml.metadata.url = '/saml/metadata'
+grails.plugin.springsecurity.saml.metadata.url = 'https://login.microsoftonline.com/0c0a3fb0-88e0-46d7-b24b-67b12f8954d5/federationmetadata/2007-06/federationmetadata.xml?appid=ff4bb18b-a4ca-49b2-828d-4885608e0388'
 grails.plugin.springsecurity.saml.metadata.providers = [myidp:'security/pom-saml-test.xml']
 grails.plugin.springsecurity.saml.metadata.sp.file = "security/sp.xml"
 grails.plugin.springsecurity.saml.metadata.sp.defaults.local = true;
