@@ -62,9 +62,9 @@ grails.plugin.springsecurity.saml.metadata.sp.defaults.securityProfile = 'pkix';
 grails.plugin.springsecurity.saml.metadata.sp.defaults.signingKey = 'javaman';
 grails.plugin.springsecurity.saml.metadata.sp.defaults.encryptionKey = 'javaman';
 grails.plugin.springsecurity.saml.metadata.sp.defaults.tlsKey = 'javaman';
-grails.plugin.springsecurity.saml.metadata.sp.defaults.requireArtifactResolveSigned = false;
-grails.plugin.springsecurity.saml.metadata.sp.defaults.requireLogoutRequestSigned = false;
-grails.plugin.springsecurity.saml.metadata.sp.defaults.requireLogoutResponseSigned = false;
+grails.plugin.springsecurity.saml.metadata.sp.defaults.requireArtifactResolveSigned = true;
+grails.plugin.springsecurity.saml.metadata.sp.defaults.requireLogoutRequestSigned = true;
+grails.plugin.springsecurity.saml.metadata.sp.defaults.requireLogoutResponseSigned = true;
 
 grails.plugin.springsecurity.saml.keyManager.storeFile = "classpath:security/keystore.jks"
 grails.plugin.springsecurity.saml.keyManager.storePass = 'changeit'

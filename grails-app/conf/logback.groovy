@@ -35,6 +35,7 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
 }
 logger('org.grails.plugin.springsecurity.saml',DEBUG)
+logger('org.springframework.security.saml',DEBUG)
 logger('grails.app',DEBUG)
 logger('grails.saml.test',DEBUG)
 root(ERROR, ['STDOUT'])
