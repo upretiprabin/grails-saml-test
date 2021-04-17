@@ -37,9 +37,12 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 grails.plugin.springsecurity.providerNames = ['samlAuthenticationProvider','daoAuthenticationProvider', 'anonymousAuthenticationProvider']
 
-grails.plugin.springsecurity.saml.active = true
+grails.plugin.springsecurity.saml.active = false
+grails.plugin.springsecurity.saml.custom.active = true
+
 grails.plugin.springsecurity.saml.afterLoginUrl = '/saml/success'
 grails.plugin.springsecurity.saml.afterLogoutUrl = '/'
+grails.plugin.springsecurity.saml.entryPoint.idpSelectionPath = '/saml/idp'
 grails.plugin.springsecurity.saml.responseSkew = 300
 grails.plugin.springsecurity.saml.useLocalRoles = true
 grails.plugin.springsecurity.saml.signatureAlgorithm = 'rsa-sha256'
@@ -51,11 +54,14 @@ grails.plugin.springsecurity.saml.autoCreate.key = 'id'
 grails.plugin.springsecurity.saml.autoCreate.assignAuthorities=false  //If you want the plugin to assign the authorities that come from the SAML message.
 
 
-grails.plugin.springsecurity.saml.metadata.defaultIdp = 'https://sts.windows.net/0c0a3fb0-88e0-46d7-b24b-67b12f8954d5/'
-grails.plugin.springsecurity.saml.metadata.url = 'https://login.microsoftonline.com/0c0a3fb0-88e0-46d7-b24b-67b12f8954d5/federationmetadata/2007-06/federationmetadata.xml?appid=ff4bb18b-a4ca-49b2-828d-4885608e0388'
+//grails.plugin.springsecurity.saml.metadata.defaultIdp = 'https://sts.windows.net/0c0a3fb0-88e0-46d7-b24b-67b12f8954d5/'
+//grails.plugin.springsecurity.saml.metadata.url = 'https://login.microsoftonline.com/0c0a3fb0-88e0-46d7-b24b-67b12f8954d5/federationmetadata/2007-06/federationmetadata.xml?appid=ff4bb18b-a4ca-49b2-828d-4885608e0388'
+
 grails.plugin.springsecurity.saml.metadata.providers = [myidp:'security/pom-saml-test.xml']
+
 grails.plugin.springsecurity.saml.metadata.sp.file = "security/sp.xml"
 grails.plugin.springsecurity.saml.metadata.sp.defaults.local = true;
+grails.plugin.springsecurity.saml.metadata.sp.defaults.idpDiscoveryEnabled = true;
 grails.plugin.springsecurity.saml.metadata.sp.defaults.entityId = 'pom-saml'
 grails.plugin.springsecurity.saml.metadata.sp.defaults.alias = 'pom-saml';
 grails.plugin.springsecurity.saml.metadata.sp.defaults.securityProfile = 'pkix';
