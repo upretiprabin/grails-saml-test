@@ -13,7 +13,7 @@ class SamlController {
 
     def success(){
         println "springSecurityService.principal.id = $springSecurityService.principal"
-        redirect(url: "http://127.0.0.1:3001/app/dashboard")
+        render "success"
 
     }
 

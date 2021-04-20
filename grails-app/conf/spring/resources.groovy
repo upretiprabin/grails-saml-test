@@ -13,8 +13,8 @@ import org.springframework.security.web.context.SecurityContextPersistenceFilter
 beans = {
     userPasswordEncoderListener(UserPasswordEncoderListener)
 
-    statelessSecurityContextRepository(NullSecurityContextRepository)
-    securityContextPersistenceFilter(SecurityContextPersistenceFilter, ref('statelessSecurityContextRepository'))
+//    statelessSecurityContextRepository(NullSecurityContextRepository)
+//    securityContextPersistenceFilter(SecurityContextPersistenceFilter, ref('statelessSecurityContextRepository'))
 
     springSecuritySamlGrailsPlugin(CustomSamlGrailsPlugin)
 
